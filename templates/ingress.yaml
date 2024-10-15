@@ -39,7 +39,7 @@ spec:
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
-  name: {{- .Values.backend.ingress.managedcertificate.name -}}
+  name: {{ .Values.backend.ingress.managedcertificate.name }}
 spec:
   domains:
     - {{ .Values.backend.ingress.hostname }}
