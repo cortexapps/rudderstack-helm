@@ -33,4 +33,16 @@ spec:
                 name: {{ include "rudderstack.fullname" . }}
                 port:
                   number: {{ .Values.backend.service.port }}
+
+---
+{{- if .Values.backend.ingress.managedcertificate.enabled -}}
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: {{- .Values.backend.ingress.managedcertificate.name -}}
+spec:
+  domains:
+    - {{ .Values.backend.ingress.hostname }}
+
+{{-- end -}}
 {{- end -}}
