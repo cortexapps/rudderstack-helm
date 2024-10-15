@@ -44,5 +44,5 @@ spec:
   domains:
     - {{ .Values.backend.ingress.hostname }}
 
-{{-- end -}}
+{{- end -}}
 {{- end -}}
