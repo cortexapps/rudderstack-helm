@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         {{- include "transformer.selectorLabels" . | nindent 8 }}
+        {{- .Values.podLabels | toYaml | nindent 8 }}
     spec:
     {{- with .Values.global.imagePullSecrets }}
       imagePullSecrets:
